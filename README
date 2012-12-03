@@ -7,6 +7,10 @@ large numbers of slum dwellings, many of which appear to be covered in blue
 plastic tarpaulins. These provide a very distinctive feature which can be
 quantified.
 
+Take a look at my write up of the approach in the file
+BlueTarpQuantificationReport.pdf
+
+
 The image processing code is written in Python and uses the python interface
 to the excellent OpenCV library (http://opencv.org/). The code for downloading
 images is written in Ruby.
@@ -14,8 +18,12 @@ images is written in Ruby.
 
 This code is made freely available under the terms of the MIT license.
 
+The github repository is https://github.com/craic/count_shelters
+
+
 If you have any questions or comments please contact me
 - Robert Jones (jones@craic.com)
+
 
 
 Prerequisites:
