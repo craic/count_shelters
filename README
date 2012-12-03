@@ -1,0 +1,57 @@
+This project is an experiment in using simple image processing techniques on satellite images
+downloaded from Google Maps in order to quantify the relative density of temporary shelters
+in adjacent qudarants.
+
+The initial focus of this work is Port-au-Prince in Haiti where there are large numbers of slum
+dwellings, many of which appear to be covered in blue plastic tarpaulins. These provide a very
+distinctive feature which can be quantified.
+
+The image processing code is written in Python and uses the python interface to the excellent
+OpenCV library (http://opencv.org/). The code for downloading images is written in Ruby.
+
+
+This code is made freely available under the terms of the MIT license.
+
+If you have any questions or comments please contact me - Robert Jones (jones@craic.com)
+
+
+Prerequisites:
+  The OpenCV library with python bindings must be installed
+
+
+
+Fetching segments of satellite images from Google maps
+
+  This URL will fetch a 640x640 pixel image centered on the latitude and longitude at a zoom level of 19:
+
+  http://maps.googleapis.com/maps/api/staticmap?center=18.543012,-72.339585&zoom=19&size=640x640&maptype=satellite&sensor=false
+
+  See google documentation for more information
+  A zoom level of 19 (at least in terms of imagery in Haiti) corresponds to approximately 180 meters on the ground
+
+
+Example images
+
+  See the files test_image_1.png and test_image_2.png for two example images
+  Google owns the copyright to these images - I will be happy to remove them upon request
+
+  Alternatively, use variants of the URL given above to fetch other images
+
+
+Scripts
+
+detect_blue_tarps.py
+  This script processes an input image and outputs the area of blue pixels along with two
+  derived images - a one bit deep (binary) thresholded image showing blue areas as white on black
+  - and the original images in which blue regions are outlined in red.
+
+count_blue_pixels.py
+  A stripped down version of detect_blue_tarps.py that simply returns the total area of blue regions
+
+fetch_image_times.rb
+  A Ruby script that generates URLs to fetch adjacent image tiles that make up a matrix. The script
+  fetches those images, computes blue regions inn each and outputs the results as a CSV file.
+
+
+
+
